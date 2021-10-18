@@ -3,6 +3,47 @@ body {
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.2rem;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.announcearea {
+    position: absolute;
+    width: 100%;
+    height: 8rem;
+    background: rgba(43, 43, 43, 0.74);
+    z-index: 50;
+    top: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.announcetext {
+    color: white;
+}
+
+.announceinput {
+    color: rgb(0, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+input[type=number] {
+    width: 40%;
+    padding: 2px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 4px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    min-height: 3rem;
+    font-size: 1.2rem;
+}
+input:focus {
+    border: 4px solid #ccc;
+    outline: none;
 }
 
 .dicewindow {
@@ -13,6 +54,8 @@ body {
     height: 15rem;
     border-top: 2px black solid; 
     border-left: 2px black solid;
+    z-index: 20;
+    background: white;
 }
 
 .box {
@@ -22,6 +65,13 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.subbutton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .playerturn {
     height: 3rem;
@@ -45,25 +95,35 @@ body {
 }
 
 .face {
-    display: grid;
+    display: none;
     grid-template-areas: 
-    "dot" "dot" "dot"
-    "dot" "dot" "dot"
-    "dot" "dot" "dot";
+    "dot dot dot"
+    "dot dot dot"
+    "dot dot dot";
+    width: 82px;
+    height: 82px;
+    grid-gap: 10px;
+    padding: 15px;
 }
 
 .dot {
     background: black;
     width: 100%;
     height: 100%;
+    border-radius: 50px;
+
 }
 
 .actualdice {
     height: 7rem;
     width: 7rem;
     background: rgb(194, 194, 194);
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 8px;
+}
+
+.actualdice:hover {
+    background: rgb(153, 153, 153);
 }
 
 .gamewindow {
@@ -107,12 +167,18 @@ body {
 }
 
 .player {
+    font-family: monospace;
     position: absolute;
     border-radius: 50px;
-    border: 5px black solid;
+    border: 15px rgb(26, 26, 26) solid;
     box-sizing: border-box;
     width: 80%;
     height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    user-select: none;
 }
 
 
@@ -123,11 +189,9 @@ body {
 .w-50 {
     width: 50%;
     height: 100%;
+    user-select: none;
 }
 
-.w-50:hover {
-    background: cyan;
-}
 
 .red {
     background: red;
@@ -170,6 +234,10 @@ body {
     background: none;
 }
 
+.hidden {
+    display: none;
+}
+
 .topright {
     top: 0;
     right: 0;
@@ -189,3 +257,49 @@ body {
     bottom: 0;
     left: 0;
 }
+
+.redonhover {
+    background: rgb(255, 255, 255);
+}
+
+.bluewonhover {
+    background: rgb(255, 255, 255);
+}
+
+.greenonhover {
+    background: rgb(255, 255, 255);
+}
+
+
+.yellowonhover {
+    background: rgb(255, 255, 255);
+}
+
+.redonhover:hover {
+    background: red;
+}
+
+.bluehover:hover {
+    background: rgb(31, 147, 255);
+}
+
+.greenonhover:hover {
+    background: rgb(75, 204, 0);
+}
+
+.yellowonhover:hover {
+    background: yellow;
+}
+
+.blinking {
+    animation: blinker 1s infinite linear;
+}
+
+@keyframes blinker {
+    0% {background: greenyellow;}
+    25% {background: mediumturquoise;}
+    50% {background: red;}
+    75% {background: rgb(31, 147, 255);}
+    100% {background: greenyellow;}
+}
+

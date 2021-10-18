@@ -8,56 +8,60 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="announcearea">
+        <div class="announcetext">Welcome to Fia Med Knuff, how many people are playing?</div>
+        <input type="number" class="announceinput" autofocus="autofocus" min="2" max="4"maxlength="1">
+    </div>
     <div class="dicewindow">
         <div class="playerturn box">- Player Turn -</div>
         <div class="buttonholder box">
-            <div class="walkbutton w-50 box">Walk Forward</div>
-            <div class="excretebutton w-50 box">Excrete Player</div>
+            <div class="walkbutton w-50 subbutton" onclick="moveButtonClick()">Walk Forward</div>
+            <div class="excretebutton w-50 subbutton" onclick="excreteButtonClick()">Excrete Unit</div>
         </div>
         <div class="dice box">
-            <div class="actualdice">
-                <div class="face" id="onedots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-                <div class="face" id="twodots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-                <div class="face" id="threedots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-                <div class="face" id="fourdots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-                <div class="face" id="fivedots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-                <div class="face" id="sixdots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+            <div class="actualdice" onclick="rolldice()">
+                <div class="face" id="1dots"><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div></div>
+                <div class="face" id="2dots"><div class="dot"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot"></div></div>
+                <div class="face" id="3dots"><div class="dot"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot"></div></div>
+                <div class="face" id="4dots"><div class="dot"></div><div class="dot empty"></div><div class="dot"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot empty"></div><div class="dot"></div><div class="dot empty"></div><div class="dot"></div></div>
+                <div class="face" id="5dots"><div class="dot"></div><div class="dot empty"></div><div class="dot"></div><div class="dot empty"></div><div class="dot"></div><div class="dot empty"></div><div class="dot"></div><div class="dot empty"></div><div class="dot"></div></div>
+                <div class="face" id="6dots"><div class="dot"></div><div class="dot empty"></div><div class="dot"></div><div class="dot"></div><div class="dot empty"></div><div class="dot"></div><div class="dot"></div><div class="dot empty"></div><div class="dot"></div></div>
             </div>
         </div>
     </div>
     <div class="gamewindow">
         <div class="homestretch">
-            <div class="plupp red"><div class="player lightred"></div></div>
-            <div class="plupp red"><div class="player lightred"></div></div>
+            <div class="plupp red" ><div id="rednest1" class="player lightred hidden">1</div></div>
+            <div class="plupp red" ><div id="rednest2" class="player lightred hidden">1</div></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp lightblue"><div class="player empty"></div></div>
+            <div class="plupp white"><div class="player empty " id="plupp8"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp9"></div></div>
+            <div class="plupp lightblue"><div class="player empty" id="plupp10"></div></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp blue"><div class="player lightblue"></div></div>
-            <div class="plupp blue"><div class="player lightblue"></div></div>
+            <div class="plupp blue" ><div id="bluenest1" class="player lightblue hidden">1</div></div>
+            <div class="plupp blue" ><div id="bluenest2" class="player lightblue hidden">1</div></div>
 
-            <div class="plupp red"><div class="player lightred"></div></div>
-            <div class="plupp red"><div class="player lightred"></div></div>
+            <div class="plupp red" ><div id="rednest3" class="player lightred hidden">1</div></div>
+            <div class="plupp red" ><div id="rednest4" class="player lightred hidden">1</div></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp blue"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp7"></div></div>
+            <div class="plupp blue"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp11"></div></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp blue"><div class="player lightblue"></div></div>
-            <div class="plupp blue"><div class="player lightblue"></div></div>
+            <div class="plupp blue" ><div id="bluenest3" class="player lightblue hidden">1</div></div>
+            <div class="plupp blue" ><div id="bluenest4" class="player lightblue hidden">1</div></div>
 
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp blue"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp6"></div></div>
+            <div class="plupp blue"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp12"></div></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
@@ -67,100 +71,102 @@
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp blue"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp5"></div></div>
+            <div class="plupp blue"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp13"></div></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
 
-            <div class="plupp lightred"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
+            <div class="plupp lightred"><div class="player empty" id="plupp0"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp1"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp2"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp3"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp4"></div></div>
             <div class="plupp blue"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
-            <div class="plupp white"><div class="player empty"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp14"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp15"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp16"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp17"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp18"></div></div>
             
-            <div class="plupp white"></div>
-            <div class="plupp red"></div>
-            <div class="plupp red"></div>
-            <div class="plupp red"></div>
-            <div class="plupp red"></div>
-            <div class="plupp white"></div>
-            <div class="plupp green"></div>
-            <div class="plupp green"></div>
-            <div class="plupp green"></div>
-            <div class="plupp green"></div>
-            <div class="plupp white"></div>
+            <div class="plupp white"><div class="player empty" id="plupp39"></div></div>
+            <div class="plupp red"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp red"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp red"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp red"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp white"><div class="player empty"id="finalDesinationPlupp"></div></div>
+            <div class="plupp green"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp green"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp green"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp green"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp19"></div></div>
             
-            <div class="plupp white"></div>
-            <div class="plupp white"></div>
-            <div class="plupp white"></div>
-            <div class="plupp white"></div>
-            <div class="plupp white"></div>
-            <div class="plupp yellow"></div>
-            <div class="plupp white"></div>
-            <div class="plupp white"></div>
-            <div class="plupp white"></div>
-            <div class="plupp white"></div>
-            <div class="plupp lightgreen"></div>
-            
-            <div class="plupp empty"></div>
-            <div class="plupp empty"></div>
-            <div class="plupp empty"></div>
-            <div class="plupp empty"></div>
-            <div class="plupp white"></div>
-            <div class="plupp yellow"></div>
-            <div class="plupp white"></div>
-            <div class="plupp empty"></div>
-            <div class="plupp empty"></div>
-            <div class="plupp empty"></div>
-            <div class="plupp empty"></div>
+            <div class="plupp white"><div class="player empty" id="plupp38"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp37"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp36"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp35"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp34"></div></div>
+            <div class="plupp yellow"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp24"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp23"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp22"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp21"></div></div>
+            <div class="plupp lightgreen"><div class="player empty" id="plupp20"></div></div>
             
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp white"></div>
-            <div class="plupp yellow"></div>
-            <div class="plupp white"></div>
+            <div class="plupp white"><div class="player empty" id="plupp33"></div></div>
+            <div class="plupp yellow"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp25"></div></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
             
-            <div class="plupp yellow"><div class="player lightyellow"></div></div>
-            <div class="plupp yellow"><div class="player lightyellow"></div></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp white"></div>
-            <div class="plupp yellow"></div>
-            <div class="plupp white"></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp green"><div class="player lightgreen"></div></div>
-            <div class="plupp green"><div class="player lightgreen"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp32"></div></div>
+            <div class="plupp yellow"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp26"></div></div>
+            <div class="plupp empty"></div>
+            <div class="plupp empty"></div>
+            <div class="plupp empty"></div>
+            <div class="plupp empty"></div>
             
-            <div class="plupp yellow"><div class="player lightyellow"></div></div>
-            <div class="plupp yellow"><div class="player lightyellow"></div></div>
+            <div class="plupp yellow" ><div id="yellownest1" class="player lightyellow hidden">1</div></div>
+            <div class="plupp yellow" ><div id="yellownest2" class="player lightyellow hidden">1</div></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp lightyellow"></div>
-            <div class="plupp white"></div>
-            <div class="plupp white"></div>
+            <div class="plupp white"><div class="player empty" id="plupp31"></div></div>
+            <div class="plupp yellow"><div class="player empty" id="plupp?"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp27"></div></div>
             <div class="plupp empty"></div>
             <div class="plupp empty"></div>
-            <div class="plupp green"><div class="player lightgreen"></div></div>
-            <div class="plupp green"><div class="player lightgreen"></div></div>
+            <div class="plupp green" ><div id="greennest1" class="player lightgreen hidden">1</div></div>
+            <div class="plupp green" ><div id="greennest2" class="player lightgreen hidden">1</div></div>
+            
+            <div class="plupp yellow" ><div id="yellownest3" class="player lightyellow hidden">1</div></div>
+            <div class="plupp yellow" ><div id="yellownest4" class="player lightyellow hidden">1</div></div>
+            <div class="plupp empty"></div>
+            <div class="plupp empty"></div>
+            <div class="plupp lightyellow"><div class="player empty" id="plupp30"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp29"></div></div>
+            <div class="plupp white"><div class="player empty" id="plupp28"></div></div>
+            <div class="plupp empty"></div>
+            <div class="plupp empty"></div>
+            <div class="plupp green" ><div id="greennest3" class="player lightgreen hidden">1</div></div>
+            <div class="plupp green" ><div id="greennest4" class="player lightgreen hidden">1</div></div>
 
         </div>
         
     </div>
+
+    <script src="scripts/main.js"></script>
 </body>
 </html>
