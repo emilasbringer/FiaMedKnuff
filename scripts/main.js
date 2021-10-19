@@ -211,7 +211,7 @@ function getSquareValue(id) {
         squareValues[nextSquare][1] += 1;
         squareValues[nextSquare][0] = (playerturn+1);
         pluppar[nextSquare].innerHTML = "1";
-        pluppar[nextSquare].style.border = "15px rgb(26, 26, 26) solid";
+        pluppar[nextSquare].style.border = "9px rgb(26, 26, 26) solid";
         pluppar[nextSquare].style.background = playerTurnColors[playerturn];
         
         }
@@ -220,7 +220,7 @@ function getSquareValue(id) {
             squareValues[nextSquare][1] = 1;
             squareValues[nextSquare][0] = (playerturn+1);
             pluppar[nextSquare].innerHTML = "1";
-            pluppar[nextSquare].style.border = "15px rgb(26, 26, 26) solid";
+            pluppar[nextSquare].style.border = "9px rgb(26, 26, 26) solid";
             pluppar[nextSquare].style.background = playerTurnColors[playerturn];
         }
         else {
@@ -243,7 +243,7 @@ function getSquareValue(id) {
 function displayOnePluppAtFirstForPlayer(x) {
     if (squareValues[0 + (x * 10)][1] < 1) {
         pluppar[0 + (x * 10)].style.background = playerTurnColors[x];
-        pluppar[0 + (x * 10)].style.border = "15px rgb(26, 26, 26) solid";
+        pluppar[0 + (x * 10)].style.border = "9px rgb(26, 26, 26) solid";
         pluppar[0 + (x * 10)].innerHTML = "1";
         squareValues[0 + (x * 10)][1] = 1;
         squareValues[0 + (x * 10)][0] = playerturn+1;
@@ -259,7 +259,7 @@ function displayOnePluppAtFirstForPlayer(x) {
 function displayOnePluppAtSixthForPlayer(x) {
     if (squareValues[5 + (x * 10)][1] < 1) {
         pluppar[5 + (x * 10)].style.background = playerTurnColors[x];
-        pluppar[5 + (x * 10)].style.border = "15px rgb(26, 26, 26) solid";
+        pluppar[5 + (x * 10)].style.border = "9px rgb(26, 26, 26) solid";
         pluppar[5 + (x * 10)].innerHTML = "1";
         squareValues[5 + (x * 10)][1] = 1;
         squareValues[5 + (x * 10)][0] = playerturn+1;
@@ -274,7 +274,7 @@ function displayOnePluppAtSixthForPlayer(x) {
 function displayTwoPluppAtFirstForPlayer(x) {
     if (squareValues[0 + (x * 10)][1] < 1) {
         pluppar[0 + (x * 10)].style.background = playerTurnColors[x];
-        pluppar[0 + (x * 10)].style.border = "15px rgb(26, 26, 26) solid";
+        pluppar[0 + (x * 10)].style.border = "9px rgb(26, 26, 26) solid";
         pluppar[0 + (x * 10)].innerHTML = "2";
         squareValues[0 + (x * 10)][1] = 2;
         squareValues[0 + (x * 10)][0] = playerturn+1;

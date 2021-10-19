@@ -170,7 +170,7 @@ input:focus {
     font-family: monospace;
     position: absolute;
     border-radius: 50px;
-    border: 15px rgb(26, 26, 26) solid;
+    border: 9px rgb(26, 26, 26) solid;
     box-sizing: border-box;
     width: 80%;
     height: 80%;
